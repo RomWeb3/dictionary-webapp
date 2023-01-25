@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "inconsolata";
+  src: url("../public/fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf");
+}
+@font-face {
+  font-family: "inter";
+  src: url("../public/fonts/inter/Inter-VariableFont_slnt\,wght.ttf");
+}
+@font-face {
+  font-family: "lora";
+  src: url("../public/fonts/lora/Lora-VariableFont_wght.ttf");
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  scroll-behavior: auto !important;
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  text-transform: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter";
+}
+
+.App {
+  background: white;
+  min-height: 100vh;
+  padding: 2.4rem;
+}

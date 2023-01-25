@@ -1,0 +1,135 @@
+.results {
+  margin-top: 2.4rem;
+}
+
+.result-header {
+  position: relative;
+  margin-bottom: 3.2rem;
+}
+
+.word {
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 3.9rem;
+  color: #2d2d2d;
+  margin-bottom: 0.8rem;
+}
+
+.icon-play {
+  width: 4.8rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 0;
+}
+
+.phonetic {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  color: #a445ed;
+}
+
+.part-of-speech {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.part-of-speech h3 {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  color: #2d2d2d;
+}
+
+.line {
+  height: 1px;
+  background: #e9e9e9;
+  width: 100%;
+}
+
+.definition h4 {
+  margin: 3.2rem 0 1.7rem;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: #757575;
+}
+
+.definition ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  list-style: none;
+  padding-left: 2rem;
+}
+
+.definition ul li::before {
+  content: "\2022";
+  color: #8f19e8;
+  display: inline-block;
+  width: 2rem;
+  margin-left: -2rem;
+}
+
+.definition ul li {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  color: #2d2d2d;
+}
+
+.synonyms {
+  margin-top: 2.4rem;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  margin-bottom: 3.2rem;
+}
+
+.synonyms h4 {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: #757575;
+}
+
+.synonyms span {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: #a445ed;
+}
+
+.result-footer {
+  border-top: 1px solid #e9e9e9;
+  padding-top: 2.4rem;
+}
+
+.result-footer h3 {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: #757575;
+  text-decoration: underline;
+  margin-bottom: 0.8rem;
+}
+
+.source-link {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.source-link a {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: #2d2d2d;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
