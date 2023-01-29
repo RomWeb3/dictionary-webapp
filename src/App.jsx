@@ -1,32 +1,33 @@
-import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
-import Results from "./components/Results";
+import FontsModal from "./components/FontsModal";
+import useLocalStorage from "use-local-storage";
+import { useState } from "react";
 
 function App() {
-  const [search, setSearch] = useState("");
-  const [results, setResults] = useState([]);
+  const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
+  const [modal, setModal] = useState(false);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+  };
 
   const handleClick = () => {
-    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${search}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setResults(data);
-        console.log(data);
-      });
+    toggleTheme();
+  };
+
+  const toggleModal = () => {
+    setModal(!modal);
   };
 
   return (
-    <div className="App">
-      <Header />
+    <div className="App" data-theme={theme}>
+      <Header onClick={handleClick} onModal={toggleModal} theme={theme} />
       <main>
-        <SearchBar
-          onClick={handleClick}
-          search={search}
-          setSearch={setSearch}
-        />
-        <Results results={results} />
+        {modal && <FontsModal />}
+        <SearchBar />
       </main>
     </div>
   );

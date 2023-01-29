@@ -1,15 +1,21 @@
 .search-bar {
   position: relative;
+  width: 100%;
+  max-width: 73.6rem;
 }
 
 input[type="text"] {
   width: 100%;
   max-width: 73.6rem;
   height: 4.8rem;
-  background: #f4f4f4;
+  background: var(--searchbar-color);
   border-radius: 16px;
   border: none;
   padding: 0 2.4rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: var(--text-primary);
 }
 
 input[type="text"]::placeholder {
@@ -18,7 +24,7 @@ input[type="text"]::placeholder {
   font-weight: 700;
   font-size: 1.6rem;
   line-height: 1.9rem;
-  color: #2d2d2d;
+  color: var(--text-primary);
   opacity: 0.25;
 }
 
@@ -28,4 +34,18 @@ input[type="text"]::placeholder {
   top: 0;
   bottom: 0;
   margin: auto;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  input[type="text"] {
+    height: 6.4rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  input[type="text"]::placeholder {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
 }

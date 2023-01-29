@@ -1,61 +1,88 @@
 import "../styles/Results.css";
-import { useEffect } from "react";
 
 function Results({ results }) {
-  useEffect(() => {
-    console.log(results);
-  }, [results]);
+  const playAudio = (audio) => {
+    const audioElement = new Audio(audio);
+    audioElement.play();
+  };
 
   return (
     <div className="results">
-      <div className="result-header">
-        <h2 className="word">{results.word}</h2>
-        <img
-          className="icon-play"
-          src="../assets/icon-play.svg"
-          alt="icon play"
-        />
-        <h4 className="phonetic">/ˈkiːbɔːd/</h4>
-      </div>
-      <div className="result-main">
-        <div className="part-of-speech">
-          <h3>noun</h3>
-          <div className="line"></div>
-        </div>
-        <div className="definition">
-          <h4>Meaning</h4>
-          <ul>
-            <li>
-              (etc.) A set of keys used to operate a typewriter, computer etc.
-            </li>
-            <li>
-              A component of many instruments including the piano, organ, and
-              harpsichord consisting of usually black and white keys that cause
-              different tones to be produced when struck.
-            </li>
-            <li>
-              A device with keys of a musical keyboard, used to control
-              electronic sound-producing devices which may be built into or
-              separate from the keyboard device.
-            </li>
-          </ul>
-        </div>
-        <div className="synonyms">
-          <h4>Synonyms</h4>
-          <span>electronic keyboard</span>
-        </div>
-      </div>
-      <div className="result-footer">
-        <h3>Source</h3>
-        <div className="source-link">
-          <a href="https://en.wiktionary.org/wiki/keyboard">
-            {results.sourceUrls}
-          </a>
-          <a href="https://en.wiktionary.org/wiki/keyboard">
-            <img src="../assets/icon-new-window.svg" alt="new window icon" />
-          </a>
-        </div>
-      </div>
+      {results.slice(0, 1).map((result) => {
+        return (
+          <div key={result.word} className="result">
+            <div className="result-header">
+              <h2 className="word">{result.word}</h2>
+              {result.phonetics.map((phonetic) => {
+                return (
+                  <img
+                    key={Math.random() * 100 + 200}
+                    className="icon-play"
+                    src="../assets/icon-play.svg"
+                    alt="icon play"
+                    onClick={() => playAudio(phonetic.audio)}
+                  />
+                );
+              })}
+              <h4 className="phonetic">{result.phonetic}</h4>
+            </div>
+            <div className="result-main">
+              {result.meanings.slice(0, 2).map((meaning) => {
+                return (
+                  <div key={Date.now() + meaning.partOfSpeech}>
+                    <div className="part-of-speech">
+                      <h3>{meaning.partOfSpeech}</h3>
+                      <div className="line"></div>
+                    </div>
+                    <div className="definitions">
+                      <h4>Meaning</h4>
+                    </div>
+                    {meaning.definitions.slice(0, 3).map((definition) => {
+                      return (
+                        <div
+                          key={Math.random() * 100 + 1}
+                          className="definition"
+                        >
+                          <ul>
+                            <li>{definition.definition}</li>
+                          </ul>
+                          {definition.example && (
+                            <div className="example">
+                              <span>"{definition.example}"</span>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                    {meaning.synonyms.length !== 0 && (
+                      <div className="synonyms">
+                        <h4>Synonyms</h4>
+                        <span>{meaning.synonyms[0]}</span>
+                        <span>{meaning.synonyms[1]}</span>
+                        <span>{meaning.synonyms[2]}</span>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="result-footer">
+              <h3>Source</h3>
+              <div className="source-link">
+                <a target="_blank" href={result.sourceUrls[0]}>
+                  {result.sourceUrls[0]}
+                </a>
+                <a target="_blank" href={result.sourceUrls[0]}>
+                  <img
+                    src="../assets/icon-new-window.svg"
+                    alt="new window icon"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

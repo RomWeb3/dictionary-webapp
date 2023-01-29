@@ -1,0 +1,47 @@
+.modal {
+  position: absolute;
+  top: 7.1rem;
+  right: 13rem;
+  z-index: 1000;
+  background: var(--background);
+  width: 18.3rem;
+  height: 15.2rem;
+  box-shadow: 0px 5px 30px var(--box-shadow);
+  border-radius: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 2.4rem;
+}
+
+.modal p {
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.modal p:hover {
+  color: #a445ed;
+}
+
+.sans-serif {
+  font-family: "Inter";
+}
+
+.serif {
+  font-family: "Lora";
+}
+
+.mono {
+  font-family: "Inconsolata";
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    top: 10.5rem;
+    right: 17.6rem;
+  }
+}
