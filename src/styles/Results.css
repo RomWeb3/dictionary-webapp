@@ -225,3 +225,9 @@
     margin-bottom: 0;
   }
 }
+
+@media screen and (min-width: 1440px) {
+  .results {
+    margin-top: 4.5rem;
+  }
+}

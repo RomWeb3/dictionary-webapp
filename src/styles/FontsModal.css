@@ -1,7 +1,7 @@
 .modal {
   position: absolute;
-  top: 7.1rem;
-  right: 13rem;
+  top: -2rem;
+  right: 10.6rem;
   z-index: 1000;
   background: var(--background);
   width: 18.3rem;
@@ -41,7 +41,7 @@
 
 @media screen and (min-width: 768px) {
   .modal {
-    top: 10.5rem;
-    right: 17.6rem;
+    top: -4.4rem;
+    right: 13.6rem;
   }
 }
