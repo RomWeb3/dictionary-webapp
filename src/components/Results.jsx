@@ -1,6 +1,6 @@
 import "../styles/Results.css";
 
-function Results({ results }) {
+function Results({ results, onFetch }) {
   const playAudio = (audio) => {
     const audioElement = new Audio(audio);
     audioElement.play();
@@ -57,9 +57,9 @@ function Results({ results }) {
                     {meaning.synonyms.length !== 0 && (
                       <div className="synonyms">
                         <h4>Synonyms</h4>
-                        <span>{meaning.synonyms[0]}</span>
-                        <span>{meaning.synonyms[1]}</span>
-                        <span>{meaning.synonyms[2]}</span>
+                        <span onClick={onFetch}>{meaning.synonyms[0]}</span>
+                        <span onClick={onFetch}>{meaning.synonyms[1]}</span>
+                        <span onClick={onFetch}>{meaning.synonyms[2]}</span>
                       </div>
                     )}
                   </div>

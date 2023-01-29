@@ -1,5 +1,6 @@
 .results {
   margin-top: 2.4rem;
+  width: 100%;
 }
 
 .result-header {
@@ -117,6 +118,10 @@
   font-size: 1.6rem;
   line-height: 1.9rem;
   color: var(--violet);
+}
+
+.synonyms span:hover {
+  text-decoration-line: underline;
 }
 
 .result-footer {
