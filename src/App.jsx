@@ -8,6 +8,7 @@ import { useState } from "react";
 function App() {
   const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
   const [modal, setModal] = useState(false);
+  const [rotation, setRotation] = useState(0);
   const [selectedFont, setSelectedFont] = useState("inter");
 
   const toggleTheme = () => {
@@ -23,15 +24,32 @@ function App() {
     setModal(!modal);
   };
 
+  const toggleRotation = () => {
+    setRotation(rotation === 0 ? 180 : 0);
+  };
+
   return (
     <div
       className="App"
       data-theme={theme}
       style={{ fontFamily: selectedFont }}
     >
-      <Header onClick={handleClick} onModal={toggleModal} theme={theme} />
+      <Header
+        onClick={handleClick}
+        onModal={toggleModal}
+        theme={theme}
+        selectedFont={selectedFont}
+        rotation={rotation}
+        toggleRotation={toggleRotation}
+      />
       <main>
-        {modal && <FontsModal onSelect={setSelectedFont} />}
+        {modal && (
+          <FontsModal
+            setSelectedFont={setSelectedFont}
+            toggleRotation={toggleRotation}
+            onClose={() => setModal(false)}
+          />
+        )}
         <SearchBar />
       </main>
     </div>

@@ -1,13 +1,15 @@
 import "../styles/Header.css";
 import { useState } from "react";
 
-function Header({ onClick, onModal, theme }) {
-  const [rotation, setRotation] = useState(0);
+function Header({
+  onClick,
+  onModal,
+  theme,
+  selectedFont,
+  rotation,
+  toggleRotation,
+}) {
   const isThemeLight = theme === "light" ? 0 : 1;
-
-  const toggleRotation = () => {
-    setRotation(rotation === 0 ? 180 : 0);
-  };
 
   return (
     <header>
@@ -21,7 +23,9 @@ function Header({ onClick, onModal, theme }) {
             onModal();
           }}
         >
-          Sans Serif
+          {selectedFont === "inter" && "Sans Serif"}
+          {selectedFont === "lora" && "Serif"}
+          {selectedFont === "inconsolata" && "Mono"}
         </span>
         <img
           style={{ transform: `rotate(${rotation}deg)` }}

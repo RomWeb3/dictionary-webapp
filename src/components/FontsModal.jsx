@@ -1,15 +1,36 @@
 import "../styles/FontsModal.css";
 
-function FontsModal({ onSelect }) {
+function FontsModal({ setSelectedFont, toggleRotation, onClose }) {
   return (
     <div className="modal">
-      <p onClick={() => onSelect("inter")} className="sans-serif">
+      <p
+        onClick={() => {
+          setSelectedFont("inter");
+          onClose();
+          toggleRotation();
+        }}
+        className="sans-serif"
+      >
         Sans Serif
       </p>
-      <p onClick={() => onSelect("lora")} className="serif">
+      <p
+        onClick={() => {
+          setSelectedFont("lora");
+          onClose();
+          toggleRotation();
+        }}
+        className="serif"
+      >
         Serif
       </p>
-      <p onClick={() => onSelect("inconsolata")} className="mono">
+      <p
+        onClick={() => {
+          setSelectedFont("inconsolata");
+          onClose();
+          toggleRotation();
+        }}
+        className="mono"
+      >
         Mono
       </p>
     </div>
