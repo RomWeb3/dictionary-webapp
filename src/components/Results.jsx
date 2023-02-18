@@ -18,7 +18,7 @@ function Results({ results, onFetch }) {
                   <img
                     key={Math.random() * 100 + 200}
                     className="icon-play"
-                    src="../assets/icon-play.svg"
+                    src="./assets/icon-play.svg"
                     alt="icon play"
                     onClick={() => playAudio(phonetic.audio)}
                   />
@@ -74,7 +74,7 @@ function Results({ results, onFetch }) {
                 </a>
                 <a target="_blank" href={result.sourceUrls[0]}>
                   <img
-                    src="../assets/icon-new-window.svg"
+                    src="./assets/icon-new-window.svg"
                     alt="new window icon"
                   />
                 </a>

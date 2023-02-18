@@ -14,7 +14,7 @@ function Header({
   return (
     <header>
       <div className="logo">
-        <img src="../assets/logo.svg" alt="logo" />
+        <img src="./assets/logo.svg" alt="logo" />
       </div>
       <div className="settings">
         <span
@@ -30,7 +30,7 @@ function Header({
         <img
           style={{ transform: `rotate(${rotation}deg)` }}
           className="arrow-down"
-          src="../assets/icon-arrow-down.svg"
+          src="./assets/icon-arrow-down.svg"
           alt="icon arrow down"
           onClick={() => {
             toggleRotation();
