@@ -69,7 +69,7 @@ function SearchBar() {
         <img
           onClick={handleClick}
           className="icon-search"
-          src="../assets/icon-search.svg"
+          src="./assets/icon-search.svg"
           alt="icon search"
         />
       </div>
