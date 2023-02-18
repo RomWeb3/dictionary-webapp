@@ -17,6 +17,7 @@ input[type="text"] {
   line-height: 1.9rem;
   color: var(--text-primary);
   caret-color: #a445ed;
+  font-family: inherit;
 }
 
 .search-bar.empty input[type="text"] {
@@ -32,7 +33,6 @@ input[type="text"] {
 }
 
 input[type="text"]::placeholder {
-  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 1.6rem;
