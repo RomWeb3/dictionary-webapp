@@ -1,11 +1,17 @@
 import "../styles/FontsModal.css";
 
-function FontsModal() {
+function FontsModal({ onSelect }) {
   return (
     <div className="modal">
-      <p className="sans-serif">Sans Serif</p>
-      <p className="serif">Serif</p>
-      <p className="mono">Mono</p>
+      <p onClick={() => onSelect("inter")} className="sans-serif">
+        Sans Serif
+      </p>
+      <p onClick={() => onSelect("lora")} className="serif">
+        Serif
+      </p>
+      <p onClick={() => onSelect("inconsolata")} className="mono">
+        Mono
+      </p>
     </div>
   );
 }

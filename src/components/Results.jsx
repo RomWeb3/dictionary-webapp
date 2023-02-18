@@ -10,7 +10,7 @@ function Results({ results, onFetch }) {
     <div className="results">
       {results.slice(0, 1).map((result) => {
         return (
-          <div key={result.word} className="result">
+          <div key={Date.now() + result.word} className="result">
             <div className="result-header">
               <h2 className="word">{result.word}</h2>
               {result.phonetics.map((phonetic) => {

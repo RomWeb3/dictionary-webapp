@@ -8,10 +8,6 @@ function SearchBar() {
   const [clicked, setClicked] = useState(false);
   const [searchBarClass, setSearchBarClass] = useState("search-bar");
 
-  // const emptySearch = () => {
-  //   setSearchBarClass("search-bar empty");
-  // };
-
   const handleClick = async () => {
     if (search === "" || search === " ") {
       setSearchBarClass("search-bar empty");

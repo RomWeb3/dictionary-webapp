@@ -8,6 +8,7 @@ import { useState } from "react";
 function App() {
   const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
   const [modal, setModal] = useState(false);
+  const [selectedFont, setSelectedFont] = useState("inter");
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -23,10 +24,14 @@ function App() {
   };
 
   return (
-    <div className="App" data-theme={theme}>
+    <div
+      className="App"
+      data-theme={theme}
+      style={{ fontFamily: selectedFont }}
+    >
       <Header onClick={handleClick} onModal={toggleModal} theme={theme} />
       <main>
-        {modal && <FontsModal />}
+        {modal && <FontsModal onSelect={setSelectedFont} />}
         <SearchBar />
       </main>
     </div>
